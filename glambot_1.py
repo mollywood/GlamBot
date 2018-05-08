@@ -3,7 +3,7 @@ import socket
 
 #establishing bot and global variables
 ircsock = socket.socket(socket.AF_INET, socket. SOCK_STREAM)
-server = "tarantula.snoonet.org" #server
+server = "irc.snoonet.org" #server
 channel = "##bot-testing" # channel
 botnick = "GlamBot" # bot's name
 adminname = "actualgirl" # my nick
@@ -58,8 +58,8 @@ def main():
                     sendmsg("oh...okay. :'(")
                     ircsock.send(bytes("QUIT \n", "UTF-8"))
                     return
-        else:
-            if ircmsg.find("PING :") != -1:
+    else:
+        if ircmsg.find("PING :") != -1:
                 ping()
 
 main()
